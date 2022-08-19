@@ -58,6 +58,8 @@ li {
   border: 1px solid #000;
   text-decoration: none;
   color: blue;
+  padding: 4px;
+  font-size: small;
 }
 
 .sub-section {
@@ -105,6 +107,10 @@ tr:nth-child(2n) {
   justify-content: space-between;
 }
 
+.footer-text {
+  padding-bottom: 15px;
+}
+
 .footer-subsection {
   display: flex;
   align-items: center;
@@ -126,4 +132,8 @@ tr:nth-child(2n) {
 .controls-item {
   font-weight: bold;
   padding: 0 50px;
+}
+
+.controlIcon {
+  margin-right: 5px;
 }
