@@ -30,3 +30,25 @@ const funcBind = add.bind(obj, 2, 3);
 const resultBind = funcBind();
 
 console.log({ resultCall, resultBind, resultApply });
+
+// Implementing a new map with call method
+
+function newMap(func) {
+  let distArr = [];
+  const arrLen = this.length;
+  console.log(arrLen);
+  for (let i = 0; i < arrLen; i++) {
+    distArr.push(func.call(this, this[i]));
+  }
+  return distArr;
+}
+
+Object.defineProperty(Array.prototype, "newMap", {
+  value: newMap,
+});
+
+const arr = [1, 2, 3];
+
+const newArr = arr.newMap((item) => item * item);
+
+console.log(newArr, "new map square method");
