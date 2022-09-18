@@ -1,0 +1,157 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+h3 {
+  margin-bottom: 20px;
+}
+
+.box1,
+.box2,
+.box3,
+.box4 {
+  position: absolute;
+  height: 75px;
+  width: 75px;
+}
+
+.box1 {
+  background-color: red;
+  top: 0px;
+  left: 0;
+  transform-origin: top left;
+  transition: transform 1s;
+}
+
+.box2 {
+  background: yellow;
+  top: 0;
+  right: 0;
+  transform-origin: top right;
+  transition: transform 1s;
+}
+
+.box3 {
+  background: blue;
+  left: 0;
+  bottom: 0;
+  transition: transform 1s;
+  transform-origin: bottom left;
+}
+
+.box4 {
+  background: green;
+  right: 0;
+  bottom: 0;
+  transition: transform 1s;
+  transform-origin: bottom right;
+}
+
+.container:hover .box1 {
+  transform: rotate(90deg);
+}
+
+.container:hover .box2 {
+  transform: rotate(-90deg);
+}
+
+.container:hover .box3 {
+  transform: rotate(-90deg);
+}
+
+.container:hover .box4 {
+  transform: rotate(90deg);
+}
