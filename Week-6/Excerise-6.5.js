@@ -1,27 +1,38 @@
 /**
- * Problem 6.2 Spiral Order Matrix II
+ * Problem 6.5: Pair With Given Difference
  *
- * Problem Description: Given a matrix of m * n elements (m rows, n columns), return all elements of the matrix in spiral order.
+ * Given an one-dimensional unsorted array A containing N integers.You are also given an integer B, find if there exists a pair of elements in the array whose difference is B.Return 1 if any such pair exists else return 0. Problem Constraints 1 <= N <= 105 -103 <= A[i]<= 103 -105 <= B <= 105
  *
- * Example: Given the following matrix: [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ]
- * You should return[1, 2, 3, 6, 9, 8, 7, 4, 5]
+ * Input Format First argument is an integer array A of size N. Second argument is an integer B.
+ *
+ * Output Format Return 1 if any such pair exists else return 0.
+ *
+ * Example Input Input 1: A = [5, 10, 3, 2, 50, 80] B = 78 Input 2: A = [-10, 20] B = 30
+ *
+ * Example Output Output 1: 1 Output 2: 1
+ *
+ * Example Explanation Explanation 1: Pair (80, 2) gives a difference of 78. Explanation 2:Pair (20, -10) gives a difference of 30 i.e 20 - (-10) => 20 + 10 => 30
  */
 
-const spiralOrderMatrix = (arr) => {
-  const result = [];
-
-  return result;
+// A1-A2 === B
+// A1 = B+A2
+const pairDifference = (arr, B) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr.includes(B + arr[i])) {
+      return 1;
+    }
+  }
+  return 0;
 };
 
-const input = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-];
+const pairDifference2 = (arr, B) => {
+  for (let a of arr) {
+    if (arr.includes(B + a)) {
+      return 1;
+    }
+  }
+  return 0;
+};
 
-spiralOrderMatrix(input);
-
-// Space Complexity :
-// Time Complexity:
-
-// https://jsoncrack.com/
+console.log(pairDifference2([5, 10, 3, 2, 50, 80], 78));
+console.log(pairDifference2([-10, 20], 40));
