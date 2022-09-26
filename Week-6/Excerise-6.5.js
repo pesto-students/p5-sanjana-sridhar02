@@ -24,6 +24,8 @@ const pairDifference = (arr, B) => {
   }
   return 0;
 };
+// Time complexity: O(n2)
+// Space complexity : O(1)
 
 const pairDifference2 = (arr, B) => {
   for (let a of arr) {
@@ -33,6 +35,21 @@ const pairDifference2 = (arr, B) => {
   }
   return 0;
 };
+// Time complexity: O(n2)
+// Space complexity : O(1)
 
-console.log(pairDifference2([5, 10, 3, 2, 50, 80], 78));
-console.log(pairDifference2([-10, 20], 40));
+const pairDifference3 = (arr, B) => {
+  const set = new Set(arr);
+
+  for (let i = 0; i < arr.length; i++) {
+    if (set.has(B + arr[i])) {
+      return 1;
+    }
+  }
+  return 0;
+};
+// Time complexity: O(n)
+// Space complexity : O(n)
+
+console.log(pairDifference3([5, 10, 3, 2, 50, 80], 78));
+console.log(pairDifference3([-10, 20], 40));
