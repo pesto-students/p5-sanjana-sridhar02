@@ -59,7 +59,7 @@ const threeSumCloset = (nums, target) => {
   return result;
 };
 
-// Time complexity: O(n)
+// Time complexity: O(n2)
 // Space complexity : O(1)
 
 // Test cases

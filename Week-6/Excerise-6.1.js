@@ -19,9 +19,9 @@
  * @return {number}
  */
 
-var maxSubArray = function (nums) {
+const maxSubArray = (nums) => {
   let prev = 0;
-  let max = -Infinity;
+  let max = Number.Infinity;
   for (let i = 0; i < nums.length; i++) {
     prev = Math.max(prev + nums[i], nums[i]);
     max = Math.max(max, prev);
@@ -29,3 +29,6 @@ var maxSubArray = function (nums) {
 
   return max;
 };
+console.log(Number.Infinity);
+console.log(Number.EPSILON); // smallest number
+console.log(0.1 + 0.2);
